@@ -92,13 +92,14 @@ const BlogPostPage = (props: BlogPostProps) => {
       <Segment vertical>
         {tags}
       </Segment>
-      {props.data.site
+      {/*
+        props.data.site
         && props.data.site.siteMetadata
         && props.data.site.siteMetadata.disqus
         && <Segment vertical>
             <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
         </Segment>
-      }
+      */}
       <Segment vertical>
         <Grid padded centered>
           {recents}
