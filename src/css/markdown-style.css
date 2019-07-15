@@ -1,0 +1,33 @@
+.mdstyle {
+  border: none;
+  font-size: 1.7rem !important;
+  font-weight: 900;
+}
+
+.mdstyle h1 {
+  border-bottom: solid 1.7px rgb(224, 224, 224);
+  padding: 0.3em 0;
+  font-size: 3rem !important;
+}
+
+.mdstyle h2 {
+  border-bottom: solid 1.7px rgb(224, 224, 224);
+  padding: 0.3em 0;
+  font-size: 2.7rem !important;
+}
+
+.mdstyle h3 {
+  border-bottom: solid 1.7px rgb(224, 224, 224);
+  padding: 0.3em 0;
+  font-size: 2.3rem !important;
+}
+
+.mdstyle ol ul {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.mdstyle li {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}

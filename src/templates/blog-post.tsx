@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
+import "../css/markdown-style.css";
 import {
   Header,
   Container,
@@ -107,12 +108,24 @@ const BlogPostPage = (props: BlogPostProps) => {
             </Item.Content>
           </Item>
         </Item.Group>
-        <Header as="h1">{frontmatter.title}</Header>
+        <Header
+          as="h1"
+          style={{
+            background: "#e0ffff",
+            border: "none",
+            borderLeft: "solid 7px #0000ff",
+            fontSize: "4rem",
+            fontWeight: "900",
+            padding: "0.3em",
+          }}
+        >
+          {frontmatter.title}
+        </Header>
       </Segment>
       <Image {...cover} fluid />
       <Segment
         vertical
-        style={{ border: "none" }}
+        className="mdstyle"
         dangerouslySetInnerHTML={{
           __html: html,
         }}
