@@ -1,4 +1,5 @@
 import * as React from "react";
+import { createRef } from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
 import "../css/markdown-style.css";
@@ -6,6 +7,7 @@ import {
   Header,
   Container,
   Segment,
+  Sticky,
   Icon,
   Label,
   Button,
@@ -14,6 +16,7 @@ import {
   Image,
   Item,
   Comment,
+  Ref,
 } from "semantic-ui-react";
 import {
   MarkdownRemark,
@@ -35,7 +38,7 @@ interface BlogPostProps extends LayoutProps {
 }
 
 const BlogPostPage = (props: BlogPostProps) => {
-  const { frontmatter, html, timeToRead } = props.data.post;
+  const { frontmatter, html, timeToRead, tableOfContents } = props.data.post;
   const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
 
   const tags = props.data.post.frontmatter.tags.map((tag) => (
@@ -87,6 +90,7 @@ const BlogPostPage = (props: BlogPostProps) => {
     url: "http://localhost:8000" + props.data.post.fields.slug,
   };
   const cover = get(frontmatter, "image.children.0.fixed", {});
+  const contextRef = createRef();
   return (
     <Container>
       <BlogTitle />
@@ -108,28 +112,45 @@ const BlogPostPage = (props: BlogPostProps) => {
             </Item.Content>
           </Item>
         </Item.Group>
-        <Header
-          as="h1"
-          style={{
-            background: "#e0ffff",
-            border: "none",
-            borderLeft: "solid 7px #0000ff",
-            fontSize: "4rem",
-            fontWeight: "900",
-            padding: "0.3em",
-          }}
-        >
-          {frontmatter.title}
-        </Header>
       </Segment>
-      <Image {...cover} fluid />
-      <Segment
-        vertical
-        className="mdstyle"
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
+
+      <Grid padded style={{ justifyContent: "space-around" }}>
+        <Ref innerRef={contextRef}>
+          <Grid.Column width={12}>
+            <Header
+              as="h1"
+              style={{
+                background: "#e0ffff",
+                border: "none",
+                borderLeft: "solid 7px #0000ff",
+                fontSize: "4rem",
+                fontWeight: "900",
+                padding: "0.3em",
+              }}
+            >
+              {frontmatter.title}
+            </Header>
+            <Image {...cover} fluid />
+            <Segment
+              vertical
+              className="mdstyle"
+              dangerouslySetInnerHTML={{
+                __html: html,
+              }}
+            />
+          </Grid.Column>
+        </Ref>
+        <Grid.Column className="mobile hidden" width={4}>
+          <Sticky context={contextRef}>
+            <div
+              className="tocStyle"
+              dangerouslySetInnerHTML={{
+                __html: tableOfContents,
+              }}
+            />
+          </Sticky>
+        </Grid.Column>
+      </Grid>
       <Segment vertical>{tags}</Segment>
       {props.data.site &&
         props.data.site.siteMetadata &&
@@ -162,6 +183,7 @@ export const pageQuery = graphql`
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
+      tableOfContents
       timeToRead
       fields {
         slug

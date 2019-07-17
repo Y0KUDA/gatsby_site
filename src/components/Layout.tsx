@@ -29,7 +29,7 @@ const Layout = (props: LayoutProps) => {
 
   return (
     <Provider store={store}>
-      <Sidebar.Pushable as={Segment}>
+      <Sidebar.Pushable as={Segment} style={{transform: "none"}}>
 
         <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
 
