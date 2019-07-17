@@ -25,6 +25,7 @@ import {
   Site,
 } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
+import MyCard from "../components/MyCard";
 import { DiscussionEmbed } from "disqus-react";
 import { withLayout, LayoutProps } from "../components/Layout";
 import { graphql } from "gatsby";
@@ -91,6 +92,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   };
   const cover = get(frontmatter, "image.children.0.fixed", {});
   const contextRef = createRef();
+  const author = frontmatter.author;
   return (
     <Container>
       <BlogTitle />
@@ -141,6 +143,18 @@ const BlogPostPage = (props: BlogPostProps) => {
           </Grid.Column>
         </Ref>
         <Grid.Column className="mobile hidden" width={4}>
+          <MyCard avatar={avatar.fixed.srcSet}
+                  id={author.id}
+                  bio={author.bio}
+                  email={author.email}
+                  twitter={author.twitter}
+                  github={author.github}
+                  qiita={author.qiita}
+                  atcoder={author.atcoder}
+                  kaggle={author.kaggle}
+                  lapras={author.lapras}
+                  vsmarket={author.vsmarket}
+                  />
           <Sticky context={contextRef}>
             <div
               className="tocStyle"
@@ -194,10 +208,17 @@ export const pageQuery = graphql`
           id
           bio
           twitter
+          email
+          github
+          qiita
+          atcoder
+          kaggle
+          lapras
+          vsmarket
           avatar {
             children {
               ... on ImageSharp {
-                fixed(width: 80, height: 80, quality: 100) {
+                fixed(width: 150, height: 150, quality: 100) {
                   src
                   srcSet
                 }
