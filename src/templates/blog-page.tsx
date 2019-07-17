@@ -1,5 +1,5 @@
 import * as React from "react";
-import Blog from "../pages/blog";
+import Blog from "../pages/index";
 import { graphql } from "gatsby";
 
 export default Blog;

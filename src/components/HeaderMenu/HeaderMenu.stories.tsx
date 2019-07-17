@@ -9,9 +9,9 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { HeaderMenu } from "./HeaderMenu";
 
 const items = [
-  { name: "Home", path: "/", exact: true },
+  // { name: "Home", path: "/", exact: true },
+  { name: "Blog", path: "/", exact: false },
   { name: "About", path: "/about/", exact: true },
-  { name: "Blog", path: "/blog/", exact: false },
 ];
 
 const LinkStub = (props: any) =>

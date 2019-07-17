@@ -11,9 +11,9 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 
 export const menuItems = [
-  { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
+  // { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
+  { name: "Blog", path: "/", exact: true, icon: "newspaper" },
   { name: "About", path: "/about/", exact: true, icon: "info circle" },
-  { name: "Blog", path: "/blog/", exact: false, icon: "newspaper" },
 ];
 
 export interface LayoutProps {
@@ -25,8 +25,8 @@ export interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const { pathname } = props.location;
-  const isHome = pathname === "/";
-
+  // const isHome = pathname === "/";
+  const isHome = false;
   return (
     <Provider store={store}>
       <Sidebar.Pushable as={Segment} style={{transform: "none"}}>
