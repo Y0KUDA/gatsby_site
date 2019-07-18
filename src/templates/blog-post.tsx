@@ -24,7 +24,6 @@ import {
   MarkdownRemarkConnection,
   Site,
 } from "../graphql-types";
-import BlogTitle from "../components/BlogTitle";
 import MyCard from "../components/MyCard";
 import { DiscussionEmbed } from "disqus-react";
 import { withLayout, LayoutProps } from "../components/Layout";
@@ -95,19 +94,10 @@ const BlogPostPage = (props: BlogPostProps) => {
   const author = frontmatter.author;
   return (
     <Container>
-      <BlogTitle />
       <Segment vertical style={{ border: "none" }}>
         <Item.Group>
           <Item>
-            <Item.Image
-              size="tiny"
-              src={avatar.fixed.src}
-              srcSet={avatar.fixed.srcSet}
-              circular
-            />
             <Item.Content>
-              <Item.Description>{frontmatter.author.id}</Item.Description>
-              <Item.Meta>{frontmatter.author.bio}</Item.Meta>
               <Item.Extra>
                 {frontmatter.updatedDate} - {timeToRead} min read
               </Item.Extra>

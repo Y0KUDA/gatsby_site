@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
-import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
@@ -38,14 +37,7 @@ const BlogPage = (props: BlogProps) => {
         const extra = (
           <Comment.Group>
             <Comment>
-              <Comment.Avatar
-                src={avatar.fixed.src}
-                srcSet={avatar.fixed.srcSet}
-              />
               <Comment.Content>
-                <Comment.Author style={{ fontWeight: 400 }}>
-                  {frontmatter.author.id}
-                </Comment.Author>
                 <Comment.Metadata style={{ margin: 0 }}>
                   {frontmatter.updatedDate} - {timeToRead} min read
               </Comment.Metadata>
@@ -80,7 +72,6 @@ const BlogPage = (props: BlogProps) => {
   return (
     <Container>
       {/* Title */}
-      <BlogTitle />
 
       {/* Content */}
       <Segment vertical>
