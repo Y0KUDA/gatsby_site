@@ -111,14 +111,7 @@ const BlogPostPage = (props: BlogPostProps) => {
           <Grid.Column width={12}>
             <Header
               as="h1"
-              style={{
-                background: "#e0ffff",
-                border: "none",
-                borderLeft: "solid 7px #0000ff",
-                fontSize: "4rem",
-                fontWeight: "900",
-                padding: "0.3em",
-              }}
+              className="titleStyle"
             >
               {frontmatter.title}
             </Header>
@@ -146,12 +139,19 @@ const BlogPostPage = (props: BlogPostProps) => {
                   vsmarket={author.vsmarket}
                   />
           <Sticky context={contextRef}>
-            <div
-              className="tocStyle"
-              dangerouslySetInnerHTML={{
-                __html: tableOfContents,
-              }}
-            />
+            <Card>
+              <Card.Content textAlign="center">
+                Index
+              </Card.Content>
+              <Card.Content>
+                <div
+                  className="tocStyle"
+                  dangerouslySetInnerHTML={{
+                    __html: tableOfContents,
+                  }}
+                />
+              </Card.Content>
+            </Card>
           </Sticky>
         </Grid.Column>
       </Grid>
