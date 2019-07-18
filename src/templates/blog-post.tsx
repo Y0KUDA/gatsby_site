@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createRef } from "react";
+import { useRef } from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
 import "../css/markdown-style.css";
@@ -91,7 +91,7 @@ const BlogPostPage = (props: BlogPostProps) => {
     url: "http://localhost:8000" + props.data.post.fields.slug,
   };
   const cover = get(frontmatter, "image.children.0.fixed", {});
-  const contextRef = createRef();
+  const contextRef = useRef(null);
   const author = frontmatter.author;
   return (
     <Container>
