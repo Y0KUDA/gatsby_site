@@ -48,10 +48,19 @@ query TemplateTagPage($tag: String) {
           }
           author {
             id
+            bio
+            twitter
+            email
+            github
+            qiita
+            atcoder
+            kaggle
+            lapras
+            vsmarket
             avatar {
               children {
                 ... on ImageSharp {
-                  fixed(width: 35, height: 35) {
+                  fixed(width: 150, height: 150, quality: 100) {
                     src
                     srcSet
                   }

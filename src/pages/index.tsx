@@ -9,6 +9,7 @@ import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { MarkdownRemark } from "../graphql-types";
+import MyCard from "../components/MyCard";
 
 interface BlogProps extends LayoutProps {
   data: {
@@ -74,6 +75,8 @@ const BlogPage = (props: BlogProps) => {
     </Container>
   );
 
+  const author = props.data.posts.edges[0].node.frontmatter.author;
+  const avatar = author.avatar.children[0] as ImageSharp;
   return (
     <Container>
       {/* Title */}
@@ -89,6 +92,18 @@ const BlogPage = (props: BlogProps) => {
             </Segment>
           </div>
           <div>
+            <MyCard avatar={avatar.fixed.srcSet}
+                    id={author.id}
+                    bio={author.bio}
+                    email={author.email}
+                    twitter={author.twitter}
+                    github={author.github}
+                    qiita={author.qiita}
+                    atcoder={author.atcoder}
+                    kaggle={author.kaggle}
+                    lapras={author.lapras}
+                    vsmarket={author.vsmarket}
+                    />
             <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
           </div>
         </Grid>
@@ -141,10 +156,19 @@ query PageBlog {
           }
           author {
             id
+            bio
+            twitter
+            email
+            github
+            qiita
+            atcoder
+            kaggle
+            lapras
+            vsmarket
             avatar {
               children {
                 ... on ImageSharp {
-                  fixed(width: 35, height: 35) {
+                  fixed(width: 150, height: 150, quality: 100) {
                     src
                     srcSet
                   }
