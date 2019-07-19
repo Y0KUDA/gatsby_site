@@ -37,7 +37,37 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-social-cards`,
+          {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              title: {
+                field: "title",
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 48,
+                style: "bold",
+                x: null,
+                y: null
+              },
+              meta: {
+                parts: [
+                  "- ",
+                  {field: "author"},
+                  " » ",
+                  {field: "date", format: "mmmm dS"}
+                ],
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 24,
+                style: "normal",
+                x: null,
+                y: null
+              },
+              background: "black",
+              xMargin: 24,
+              yMargin: 24
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
