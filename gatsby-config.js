@@ -1,7 +1,8 @@
 /* eslint-disable quotes */
 module.exports = {
   siteMetadata: {
-    title: `My website`,
+    title: `My Awesome Website`,
+    siteUrl: `https://unearned-in.com`,
     googleVerification: `abcdefz`,
     disqus: `gatsby-typescript`
   },
@@ -84,6 +85,7 @@ module.exports = {
     // site!
     `gatsby-plugin-offline`,
     `gatsby-plugin-favicon`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
