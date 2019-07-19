@@ -140,8 +140,10 @@ const BlogPostPage = (props: BlogPostProps) => {
                   />
           <Sticky context={contextRef}>
             <Card>
-              <Card.Content textAlign="center">
-                Index
+              <Card.Content>
+                <Card.Header>
+                  Index
+                </Card.Header>
               </Card.Content>
               <Card.Content>
                 <div
