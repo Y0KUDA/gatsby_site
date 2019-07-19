@@ -50,7 +50,7 @@ const AboutPage = (props: any) => {
           <div style={{ maxWidth: 600 }}>
             <Segment vertical>
               <p>何でも屋さんです。</p>
-              <p>直近はC++とC#でパッケージソフトウェアを作ってました。</p>
+              <p>直近は某社でC++とC#でパッケージソフトウェアを作ってました。</p>
               <Image.Group size="tiny">
                 <Image src={cppLogo} />
                 <Image src={csLogo} />
