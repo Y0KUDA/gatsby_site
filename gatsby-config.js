@@ -83,6 +83,13 @@ module.exports = {
     // resistant to bad networks. Works with almost any
     // site!
     `gatsby-plugin-offline`,
-    `gatsby-plugin-favicon`
+    `gatsby-plugin-favicon`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `http://unearned-in.com`,
+        stripQueryString: true
+      }
+    }
   ]
 };
