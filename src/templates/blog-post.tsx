@@ -108,7 +108,7 @@ const BlogPostPage = (props: BlogPostProps) => {
 
       <Grid padded style={{ justifyContent: "space-around" }}>
         <Ref innerRef={contextRef}>
-          <Grid.Column width={12}>
+          <div style={{ maxWidth: 600 }}>
             <Header
               as="h1"
               className="titleStyle"
@@ -123,9 +123,9 @@ const BlogPostPage = (props: BlogPostProps) => {
                 __html: html,
               }}
             />
-          </Grid.Column>
+          </div>
         </Ref>
-        <Grid.Column className="mobile hidden" width={4}>
+        <div className="mobile hidden">
           <MyCard avatar={avatar.fixed.srcSet}
                   id={author.id}
                   bio={author.bio}
@@ -153,7 +153,7 @@ const BlogPostPage = (props: BlogPostProps) => {
               </Card.Content>
             </Card>
           </Sticky>
-        </Grid.Column>
+        </div>
       </Grid>
       <Segment vertical>{tags}</Segment>
       {props.data.site &&
