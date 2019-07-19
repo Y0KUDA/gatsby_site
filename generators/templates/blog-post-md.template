@@ -5,6 +5,7 @@ updatedDate: "{{createdDate}}"
 author: {{author}}{{tags}}
 image: welcoming.png
 draft: {{draft}}
+description: 
 ---
 
 My awesome article

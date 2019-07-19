@@ -26,7 +26,7 @@ import {
 } from "../graphql-types";
 import MyCard from "../components/MyCard";
 import { DiscussionEmbed } from "disqus-react";
-import { withLayout, LayoutProps } from "../components/Layout";
+import { withLayout, withCardLayout, LayoutProps } from "../components/Layout";
 import { graphql } from "gatsby";
 
 interface BlogPostProps extends LayoutProps {
@@ -175,12 +175,13 @@ const BlogPostPage = (props: BlogPostProps) => {
   );
 };
 
-export default withLayout(BlogPostPage);
+export default withCardLayout(BlogPostPage);
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
     site: site {
       siteMetadata {
+        siteUrl
         disqus
       }
     }
@@ -218,6 +219,7 @@ export const pageQuery = graphql`
         }
         title
         updatedDate(formatString: "MMM D, YYYY")
+        description
         image {
           children {
             ... on ImageSharp {

@@ -1,7 +1,8 @@
 /* eslint-disable quotes */
 module.exports = {
   siteMetadata: {
-    title: `My website`,
+    title: `My Awesome Website`,
+    siteUrl: `https://unearned-in.com`,
     googleVerification: `abcdefz`,
     disqus: `gatsby-typescript`
   },
@@ -21,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'UA-144161806-1',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -36,6 +37,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-social-cards`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -72,7 +74,8 @@ module.exports = {
         start_url: `/`,
         background_color: `#f7f7f7`,
         theme_color: `#191919`,
-        display: `minimal-ui`
+        display: `minimal-ui`,
+        icon: "src/favicon.png"
       }
     },
     /* eslint-enable camelcase */
@@ -82,6 +85,23 @@ module.exports = {
     // resistant to bad networks. Works with almost any
     // site!
     `gatsby-plugin-offline`,
-    `gatsby-plugin-favicon`
+    `gatsby-plugin-favicon`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `http://unearned-in.com`,
+        stripQueryString: true
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://unearned-in.com',
+        sitemap: 'https://unearned-in.com/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    }
   ]
 };

@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import SidebarMenu from "./SidebarMenu/SidebarMenu";
 import { Segment, Icon, Container, Sidebar } from "semantic-ui-react";
@@ -21,6 +22,10 @@ export interface LayoutProps {
     pathname: string;
   };
   children: any;
+  slug?: string;
+  title?: string;
+  siteUrl?: string;
+  description?: string;
 }
 
 const Layout = (props: LayoutProps) => {
@@ -29,6 +34,15 @@ const Layout = (props: LayoutProps) => {
   const isHome = false;
   return (
     <Provider store={store}>
+      {props.title ? props.siteUrl ? props.slug ?
+        <Helmet title={props.title}>
+          <meta name="twitter:card" content="summary_large_image" />
+            <meta name="og:image" content={`${props.siteUrl}${props.slug}twitter-card.jpg`} />
+            <meta property="og:url" content={`${props.siteUrl}${props.slug}`} />
+            <meta property="og:title" content={props.title} />
+            {props.description ? <meta property="og:description" content={props.description} /> : null}
+        </Helmet>
+      : null : null : null}
       <Sidebar.Pushable as={Segment} style={{transform: "none"}}>
 
         <SidebarMenu Link={Link} pathname={pathname} items={menuItems} visible={false} />
@@ -70,3 +84,18 @@ export const withLayout = <P extends object>(WrappedComponent: React.ComponentTy
       );
     }
   };
+
+export const withCardLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) =>
+class WithLayout extends React.Component<P & LayoutProps> {
+  render() {
+    return (
+        <Layout location={this.props.location}
+            slug={this.props.data.post.fields.slug}
+            title={this.props.data.post.frontmatter.title}
+            siteUrl={this.props.data.site.siteMetadata.siteUrl}
+            description={this.props.data.post.frontmatter.description} >
+          <WrappedComponent {...this.props} />
+        </Layout>
+    );
+  }
+};
