@@ -81,6 +81,7 @@ module.exports = {
     // html file so the site works offline and is otherwise
     // resistant to bad networks. Works with almost any
     // site!
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-favicon`
   ]
 };
