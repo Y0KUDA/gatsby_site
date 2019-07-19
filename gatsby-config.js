@@ -92,6 +92,14 @@ module.exports = {
         siteUrl: `http://unearned-in.com`,
         stripQueryString: true
       }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://unearned-in.com',
+        sitemap: 'https://unearned-in.com/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
     }
   ]
 };
