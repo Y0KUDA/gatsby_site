@@ -219,6 +219,7 @@ export const pageQuery = graphql`
         }
         title
         updatedDate(formatString: "MMM D, YYYY")
+        description
         image {
           children {
             ... on ImageSharp {

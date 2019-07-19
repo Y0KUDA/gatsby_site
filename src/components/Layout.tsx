@@ -24,7 +24,8 @@ export interface LayoutProps {
   children: any;
   slug?: string;
   title?: string;
-  siteUrl?: url;
+  siteUrl?: string;
+  description?: string;
 }
 
 const Layout = (props: LayoutProps) => {
@@ -39,6 +40,7 @@ const Layout = (props: LayoutProps) => {
             <meta name="og:image" content={`${props.siteUrl}${props.slug}twitter-card.jpg`} />
             <meta property="og:url" content={`${props.siteUrl}${props.slug}`} />
             <meta property="og:title" content={props.title} />
+            {props.description ? <meta property="og:description" content={props.description} /> : null}
         </Helmet>
       : null : null : null}
       <Sidebar.Pushable as={Segment} style={{transform: "none"}}>
@@ -90,7 +92,8 @@ class WithLayout extends React.Component<P & LayoutProps> {
         <Layout location={this.props.location}
             slug={this.props.data.post.fields.slug}
             title={this.props.data.post.frontmatter.title}
-            siteUrl={this.props.data.site.siteMetadata.siteUrl} >
+            siteUrl={this.props.data.site.siteMetadata.siteUrl}
+            description={this.props.data.post.frontmatter.description} >
           <WrappedComponent {...this.props} />
         </Layout>
     );
