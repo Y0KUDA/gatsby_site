@@ -20,6 +20,8 @@ import pythonLogo from "./img/python.png";
 import rLogo from "./img/r.png";
 import rubyLogo from "./img/ruby.png";
 import tsLogo from "./img/ts.png";
+import juliaLogo from "./img/julia.png";
+import javaLogo from "./img/java.png";
 
 import circleciLogo from "./img/circleci.png";
 import dockerLogo from "./img/docker.png";
@@ -58,6 +60,8 @@ const AboutPage = (props: any) => {
                 <Image src={rLogo} />
                 <Image src={rubyLogo} />
                 <Image src={tsLogo} />
+                <Image src={juliaLogo} />
+                <Image src={javaLogo} />
                 <Image src={circleciLogo} />
                 <Image src={dockerLogo} />
                 <Image src={droneciLogo} />
@@ -69,6 +73,10 @@ const AboutPage = (props: any) => {
                 <Image src={reactLogo} />
                 <Image src={nodeLogo} />
               </Image.Group>
+              <Header as="h3">Contact</Header>
+                <p>ご連絡、お仕事の依頼はこちらまで。</p>
+                <Icon name="mail" size="small" />{"ykd.engineer@gmail.com"}<br/>
+                <Icon name="twitter" size="small" />{"https://twitter.com/Y0KUDA"}
               <Header as="h3">Special Thanks</Header>
               このサイトは @fabien0102 さんが管理している
               <a
