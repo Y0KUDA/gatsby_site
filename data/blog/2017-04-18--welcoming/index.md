@@ -1,13 +1,14 @@
 ---
 title: Welcoming
 createdDate: '2017-04-18'
-updatedDate: '2017-05-06'
+updatedDate: '2019-07-20'
 author: Fabien BERNARD
 tags:
   - starter
   - gatsby
 image: pexels-photo-253092.jpeg
 draft: false
+description: aaa
 ---
 
 Welcome to gatsby-starter!
@@ -27,4 +28,4 @@ const plop = "coucou";
 const toto = "tata";
 ```
 
-coucou `plop` comment tu vas ?
+coucou `plop` comment tu vasÂ ?
