@@ -4,6 +4,10 @@
 URL : http://unearned-in.com  
 @fabien0102 さんが管理している[gatsby-starter](https://github.com/fabien0102/gatsby-starter)をフォークして作成しました。
 
+# Initial setting
+Twitter Cardに対応しています。日本語を使うには、以下リポジトリのフォントを`node_modules/gatsby-remark-social-cards/fonts/`に展開する必要があります。
+https://github.com/Y0KUDA/SourceHanSansJP.fnt.git
+
 ## What's special ?
 
 Gatsbyjs という、React ベースで静的サイトを作成するためのツールを利用しています。  

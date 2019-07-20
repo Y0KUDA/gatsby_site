@@ -42,10 +42,10 @@ module.exports = {
             options: {
               title: {
                 field: "title",
-                font: "DejaVuSansCondensed",
+                font: "SourceHanSansJP",
                 color: "white",
                 size: 48,
-                style: "bold",
+                style: "normal",
                 x: null,
                 y: null
               },
@@ -56,9 +56,9 @@ module.exports = {
                   " » ",
                   {field: "date", format: "mmmm dS"}
                 ],
-                font: "DejaVuSansCondensed",
+                font: "SourceHanSansJP",
                 color: "white",
-                size: 24,
+                size: 32,
                 style: "normal",
                 x: null,
                 y: null
