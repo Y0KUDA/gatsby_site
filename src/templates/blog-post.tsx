@@ -125,7 +125,7 @@ const BlogPostPage = (props: BlogPostProps) => {
             />
           </div>
         </Ref>
-        <div className="mobile hidden">
+        <Grid.Column className="tablet hidden" width={4}>
           <MyCard avatar={avatar.fixed.srcSet}
                   id={author.id}
                   bio={author.bio}
@@ -155,7 +155,7 @@ const BlogPostPage = (props: BlogPostProps) => {
               </Card.Content>
             </Card>
           </Sticky>
-        </div>
+        </Grid.Column>
       </Grid>
       <Segment vertical>{tags}</Segment>
       {props.data.site &&
