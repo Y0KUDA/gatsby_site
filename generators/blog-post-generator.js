@@ -13,6 +13,12 @@ module.exports = plop => {
         validate: inputRequired('title')
       },
       {
+        type: 'input',
+        name: 'directoryName',
+        message: 'Directory name?',
+        validate: inputRequired('directoryName')
+      },
+      {
         type: 'list',
         name: 'author',
         message: 'The author of blog post?',
@@ -41,7 +47,7 @@ module.exports = plop => {
       return [
         {
           type: 'add',
-          path: '../data/blog/{{createdDate}}--{{dashCase title}}/index.md',
+          path: '../data/blog/{{createdDate}}--{{dashCase directoryName}}/index.md',
           templateFile: 'templates/blog-post-md.template'
         }
       ];
