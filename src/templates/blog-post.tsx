@@ -19,6 +19,18 @@ import {
   Ref,
 } from "semantic-ui-react";
 import {
+  FacebookShareButton,
+  FacebookIcon,
+  RedditShareButton,
+  RedditIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  TumblrShareButton,
+  TumblrIcon,
+  TwitterShareButton,
+  TwitterIcon,
+} from "react-share";
+import {
   MarkdownRemark,
   ImageSharp,
   MarkdownRemarkConnection,
@@ -152,6 +164,44 @@ const BlogPostPage = (props: BlogPostProps) => {
                     __html: tableOfContents,
                   }}
                 />
+              </Card.Content>
+            </Card>
+            <Card>
+              <Card.Content>
+                <Card.Header>
+                  Share
+                </Card.Header>
+              </Card.Content>
+              <Card.Content>
+                <Grid>
+                  <Grid.Row columns={5}>
+                    <Grid.Column width={2}>
+                    <FacebookShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+                      <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                      <TwitterShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+                        <TwitterIcon size={32} round />
+                      </TwitterShareButton>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                      <RedditShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+                        <RedditIcon size={32} round />
+                      </RedditShareButton>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                      <LinkedinShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+                        <LinkedinIcon size={32} round />
+                      </LinkedinShareButton>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                      <TumblrShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+                        <TumblrIcon size={32} round />
+                      </TumblrShareButton>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
               </Card.Content>
             </Card>
           </Sticky>
