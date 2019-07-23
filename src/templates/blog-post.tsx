@@ -127,6 +127,7 @@ const BlogPostPage = (props: BlogPostProps) => {
             >
               {frontmatter.title}
             </Header>
+            <Segment vertical>{tags}</Segment>
             <Image {...cover} fluid />
             <Segment
               vertical
@@ -207,7 +208,6 @@ const BlogPostPage = (props: BlogPostProps) => {
           </Sticky>
         </Grid.Column>
       </Grid>
-      <Segment vertical>{tags}</Segment>
       {props.data.site &&
         props.data.site.siteMetadata &&
         props.data.site.siteMetadata.disqus && (
