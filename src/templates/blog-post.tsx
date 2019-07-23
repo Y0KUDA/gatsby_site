@@ -120,7 +120,7 @@ const BlogPostPage = (props: BlogPostProps) => {
 
       <Grid padded style={{ justifyContent: "space-around" }}>
         <Ref innerRef={contextRef}>
-          <div style={{ maxWidth: 600 }}>
+          <div style={{ maxWidth: 800 }}>
             <Header
               as="h1"
               className="titleStyle"
@@ -138,7 +138,7 @@ const BlogPostPage = (props: BlogPostProps) => {
             />
           </div>
         </Ref>
-        <Grid.Column className="tablet hidden" width={4}>
+        <Grid.Column className="tablet hidden mobile hidden" width={4}>
           <MyCard avatar={avatar.fixed.srcSet}
                   id={author.id}
                   bio={author.bio}
