@@ -1,0 +1,69 @@
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: circleci/node:jessie
+
+jobs:
+  init:
+    executor: default
+    steps:
+      - checkout
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build:
+    executor: default
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: build
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash  
+            yarn
+            sudo npm install -g gatsby
+            gatsby clean
+            yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  
+  upload:
+    docker:
+      - image: buildpack-deps:scm
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: upload to server
+          command: |
+            ls -al
+            apt-get update
+            apt-get -qq install git-ftp
+            git config git-ftp.url unearned-in.com
+            git config git-ftp.user ${FTP_USERNAME}
+            git config git-ftp.password ${FTP_PASSWORD}
+            git config --global user.email "dummy@dummy.com"
+            git config --global user.name "dummy"
+            git add public -f
+            git commit -m "temp"
+            git subtree push --prefix public/ . build
+            git ftp init
+            git ftp push -f -b build
+
+
+workflows:
+  all:
+    jobs:
+      - init
+      - upload:
+          requires:
+            - build
+      - build:
+          requires:
+            - init
