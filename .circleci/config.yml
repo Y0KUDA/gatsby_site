@@ -60,7 +60,10 @@ jobs:
 workflows:
   all:
     jobs:
-      - init
+      - init:
+          filters:
+            branches:
+              only: blog  
       - upload:
           requires:
             - build
