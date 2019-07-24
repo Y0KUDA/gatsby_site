@@ -120,7 +120,7 @@ const BlogPostPage = (props: BlogPostProps) => {
 
       <Grid padded style={{ justifyContent: "space-around" }}>
         <Ref innerRef={contextRef}>
-          <div style={{ maxWidth: 800 }}>
+          <div style={{ maxWidth: 800, minWidth: 200 }}>
             <Header
               as="h1"
               className="titleStyle"
