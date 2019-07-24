@@ -20,6 +20,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: build
           command: |
@@ -28,6 +30,10 @@ jobs:
             sudo npm install -g gatsby
             gatsby clean
             yarn build
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - persist_to_workspace:
           root: .
           paths:
