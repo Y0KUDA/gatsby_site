@@ -56,11 +56,13 @@ jobs:
             git config git-ftp.password ${FTP_PASSWORD}
             git config --global user.email "dummy@dummy.com"
             git config --global user.name "dummy"
+            cp .htaccess public/
             git add public -f
-            git commit -m "temp"
+            git commit -nm "temp"
             git subtree push --prefix public/ . build
+            git checkout build
             git ftp init
-            git ftp push -f -b build
+            git ftp push -f
 
 
 workflows:
