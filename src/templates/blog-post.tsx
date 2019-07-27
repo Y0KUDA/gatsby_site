@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
 import "../css/markdown-style.css";
+import "../css/styles.css";
 import {
   Header,
   Container,
@@ -174,40 +175,104 @@ const BlogPostPage = (props: BlogPostProps) => {
                 </Card.Header>
               </Card.Content>
               <Card.Content>
-                <Grid>
-                  <Grid.Row columns={5}>
-                    <Grid.Column width={2}>
-                    <FacebookShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
+              <div className="Demo__container">
+                  <div className="Demo__some-network">
+                    <FacebookShareButton
+                      url={
+                        "https://unearned-in.com" + props.data.post.fields.slug
+                      }
+                    >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
-                    </Grid.Column>
-                    <Grid.Column width={2}>
-                      <TwitterShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
-                        <TwitterIcon size={32} round />
-                      </TwitterShareButton>
-                    </Grid.Column>
-                    <Grid.Column width={2}>
-                      <RedditShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
-                        <RedditIcon size={32} round />
-                      </RedditShareButton>
-                    </Grid.Column>
-                    <Grid.Column width={2}>
-                      <LinkedinShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
-                        <LinkedinIcon size={32} round />
-                      </LinkedinShareButton>
-                    </Grid.Column>
-                    <Grid.Column width={2}>
-                      <TumblrShareButton url={"https://unearned-in.com" + props.data.post.fields.slug}>
-                        <TumblrIcon size={32} round />
-                      </TumblrShareButton>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
+                  </div>
+                  <div className="Demo__some-network">
+                    <TwitterShareButton
+                      url={
+                        "https://unearned-in.com" + props.data.post.fields.slug
+                      }
+                    >
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                  </div>
+                  <div className="Demo__some-network">
+                    <RedditShareButton
+                      url={
+                        "https://unearned-in.com" + props.data.post.fields.slug
+                      }
+                    >
+                      <RedditIcon size={32} round />
+                    </RedditShareButton>
+                  </div>
+                  <div className="Demo__some-network">
+                    <LinkedinShareButton
+                      url={
+                        "https://unearned-in.com" + props.data.post.fields.slug
+                      }
+                    >
+                      <LinkedinIcon size={32} round />
+                    </LinkedinShareButton>
+                  </div>
+                  <div className="Demo__some-network">
+                    <TumblrShareButton
+                      url={
+                        "https://unearned-in.com" + props.data.post.fields.slug
+                      }
+                    >
+                      <TumblrIcon size={32} round />
+                    </TumblrShareButton>
+                  </div>
+                </div>
               </Card.Content>
             </Card>
           </Sticky>
         </Grid.Column>
       </Grid>
+
+      <Segment.Group className="tablet only mobile only computer only">
+        <Segment>
+          <Header as="h3">Share</Header>
+        </Segment>
+        <Segment>
+          <div className="Demo__container">
+            <div className="Demo__some-network">
+              <FacebookShareButton
+                url={"https://unearned-in.com" + props.data.post.fields.slug}
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
+            </div>
+            <div className="Demo__some-network">
+              <TwitterShareButton
+                url={"https://unearned-in.com" + props.data.post.fields.slug}
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+            </div>
+            <div className="Demo__some-network">
+              <RedditShareButton
+                url={"https://unearned-in.com" + props.data.post.fields.slug}
+              >
+                <RedditIcon size={32} round />
+              </RedditShareButton>
+            </div>
+            <div className="Demo__some-network">
+              <LinkedinShareButton
+                url={"https://unearned-in.com" + props.data.post.fields.slug}
+              >
+                <LinkedinIcon size={32} round />
+              </LinkedinShareButton>
+            </div>
+            <div className="Demo__some-network">
+              <TumblrShareButton
+                url={"https://unearned-in.com" + props.data.post.fields.slug}
+              >
+                <TumblrIcon size={32} round />
+              </TumblrShareButton>
+            </div>
+          </div>
+        </Segment>
+      </Segment.Group>
+
       {props.data.site &&
         props.data.site.siteMetadata &&
         props.data.site.siteMetadata.disqus && (
