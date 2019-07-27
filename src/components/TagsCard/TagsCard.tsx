@@ -20,7 +20,12 @@ export default (props: TagsCardProps) => {
       </Card.Content>
       <Card.Content>
         <List>
-          {props.tags.map((tag) => {
+          {
+            props.tags.sort((tagA: any, tagB: any) => {
+              if (tagA.totalCount > tagB.totalCount) { return -1; }
+              if (tagA.totalCount < tagB.totalCount) { return 1; }
+              return 0;
+            }).map((tag) => {
             const isActive = tag.fieldValue === props.tag;
             const activeStyle = {
               fontWeight: "700",
