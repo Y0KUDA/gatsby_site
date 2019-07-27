@@ -5,6 +5,7 @@ updatedDate: "2019-07-22"
 author: ykd
 tags:
   - gatsby
+  - 開発
 image: ../img/gatsby.jpg
 draft: false
 description: プラグインを利用することで、自動的にTwitter Cardの画像を生成することができます！
