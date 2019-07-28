@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { get } from "lodash";
 import "../css/markdown-style.css";
 import "../css/styles.css";
+import "../css/semantic.min.css";
 import {
   Header,
   Container,
@@ -132,7 +133,7 @@ const BlogPostPage = (props: BlogPostProps) => {
             <Image {...cover} fluid />
             <Segment
               vertical
-              className="mdstyle"
+              className="ui celled padded table mdstyle"
               dangerouslySetInnerHTML={{
                 __html: html,
               }}

@@ -39,6 +39,10 @@
   padding-bottom: 0.3rem;
 }
 
+.mdstyle table {
+  border: "1" !important;
+}
+
 .tocStyle li {
   list-style: none;
   padding-left: 0;
