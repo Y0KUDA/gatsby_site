@@ -5,6 +5,7 @@ updatedDate: "2019-07-22"
 author: ykd
 tags:
   - gatsby
+  - react
   - 開発
 image: ../img/gatsby.jpg
 draft: false
