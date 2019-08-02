@@ -152,6 +152,7 @@ const BlogPostPage = (props: BlogPostProps) => {
                   kaggle={author.kaggle}
                   lapras={author.lapras}
                   vsmarket={author.vsmarket}
+                  npm={author.npm}
                   />
           <Sticky context={contextRef}>
             <Card>
@@ -324,6 +325,7 @@ export const pageQuery = graphql`
           kaggle
           lapras
           vsmarket
+          npm
           avatar {
             children {
               ... on ImageSharp {

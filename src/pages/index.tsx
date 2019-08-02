@@ -94,6 +94,7 @@ const BlogPage = (props: BlogProps) => {
                     kaggle={author.kaggle}
                     lapras={author.lapras}
                     vsmarket={author.vsmarket}
+                    npm={author.npm}
                     />
             <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
           </div>
@@ -156,6 +157,7 @@ query PageBlog {
             kaggle
             lapras
             vsmarket
+            npm
             avatar {
               children {
                 ... on ImageSharp {

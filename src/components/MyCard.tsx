@@ -8,6 +8,7 @@ import kaggleIcon from "../extra_icon/kaggle.ico";
 import laprasIcon from "../extra_icon/lapras.ico";
 import twitterIcon from "../extra_icon/twitter.ico";
 import vsmarketIcon from "../extra_icon/vsmarket.ico";
+import npmIcon from "../extra_icon/npm.png";
 import HLM from "react-hlm";
 
 export default (props: {
@@ -22,6 +23,7 @@ export default (props: {
   kaggle?: string;
   lapras?: string;
   vsmarket?: string;
+  npm?: string;
 }) => {
   return (
     <Card>
@@ -102,6 +104,14 @@ export default (props: {
             <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
               <Icon />
               <Image src={vsmarketIcon} width={20} height={20} />
+            </Icon.Group>
+          </a>
+        ) : null}
+        {props.npm ? (
+          <a href={props.npm} target="_blank">
+            <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
+              <Icon />
+              <Image src={npmIcon} width={20} height={20} />
             </Icon.Group>
           </a>
         ) : null}
