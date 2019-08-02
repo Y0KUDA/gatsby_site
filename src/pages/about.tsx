@@ -101,6 +101,7 @@ const AboutPage = (props: any) => {
               kaggle={author.kaggle}
               lapras={author.lapras}
               vsmarket={author.vsmarket}
+              npm={author.npm}
             />
           </div>
         </Grid>
@@ -154,6 +155,7 @@ export const pageQuery = graphql`
               kaggle
               lapras
               vsmarket
+              npm
               avatar {
                 children {
                   ... on ImageSharp {
