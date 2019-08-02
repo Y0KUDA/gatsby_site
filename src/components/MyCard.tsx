@@ -8,6 +8,7 @@ import kaggleIcon from "../extra_icon/kaggle.ico";
 import laprasIcon from "../extra_icon/lapras.ico";
 import twitterIcon from "../extra_icon/twitter.ico";
 import vsmarketIcon from "../extra_icon/vsmarket.ico";
+import HLM from "react-hlm";
 
 export default (props: {
   id?: string;
@@ -28,9 +29,14 @@ export default (props: {
       <Card.Content>
         {props.id ? (
           <Card.Header>
-            {props.id}{" "}
-            <Link to="/about/">
-              <Icon name="info circle" color="black" />
+            <HLM.Banner text={props.id}
+                        rotationSpeed={1}
+                        distanceMax={1}
+                        distanceMin={0.3}
+                        spring="none"
+                        style={{fontSize: 35}}/>{"  "}
+            <Link to="/about/" style={{top: -25, position: "relative"}}>
+              {"　"}<Icon name="info circle" color="black" />
             </Link>
           </Card.Header>
         ) : null}

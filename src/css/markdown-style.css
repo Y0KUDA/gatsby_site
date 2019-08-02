@@ -7,19 +7,19 @@
 .mdstyle h1 {
   border-bottom: solid 1.7px rgb(224, 224, 224);
   padding: 0.3em 0;
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
 }
 
 .mdstyle h2 {
   border-bottom: solid 1.7px rgb(224, 224, 224);
   padding: 0.3em 0;
-  font-size: 2.7rem !important;
+  font-size: 2rem !important;
 }
 
 .mdstyle h3 {
   border-bottom: solid 1.7px rgb(224, 224, 224);
   padding: 0.3em 0;
-  font-size: 2.3rem !important;
+  font-size: 1.7rem !important;
 }
 
 .tocStyle ul {
@@ -41,6 +41,10 @@
 
 .mdstyle table {
   border: "1" !important;
+}
+
+.mdstyle code {
+  font-size: 1rem !important;
 }
 
 .tocStyle li {
