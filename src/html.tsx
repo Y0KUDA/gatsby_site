@@ -20,7 +20,7 @@ export default (props: HtmlProps) => {
     content={config.siteMetadata.googleVerification} /> : null;
 
   return (
-    <html lang="en">
+    <html lang="ja">
       <head>
         <meta charSet="utf-8" />
         {props.headComponents}

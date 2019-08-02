@@ -15,8 +15,8 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
     <Link to="/">
       <Header as="h1" style = {{ margin: "1rem 0 1rem 0" }}>
         <Icon name="rocket" />
-        <Header.Content>My Awesome Blog</Header.Content>
-        <Header.Subheader>　　　My super hyper goddamn awesome special cool site.</Header.Subheader>
+        <Header.Content>My Awesome Blog (仮)</Header.Content>
+        <Header.Subheader>　　　The lack of money is the root of all evil.</Header.Subheader>
       </Header>
     </Link>
     <Menu size="large" pointing secondary inverted={inverted}>

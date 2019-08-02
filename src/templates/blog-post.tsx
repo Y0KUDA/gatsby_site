@@ -97,11 +97,11 @@ const BlogPostPage = (props: BlogPostProps) => {
     );
   });
 
-  const disqusShortName = "yokuda-test";
+  const disqusShortName = "unearned-in-com";
   const disqusConfig = {
     identifier: props.data.post.fields.slug,
     title: props.data.post.frontmatter.title,
-    url: "http://localhost:8000" + props.data.post.fields.slug,
+    url: "https://unearned-in.com" + props.data.post.fields.slug,
   };
   const cover = get(frontmatter, "image.children.0.fixed", {});
   const contextRef = useRef(null);
