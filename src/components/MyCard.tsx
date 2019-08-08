@@ -9,6 +9,7 @@ import laprasIcon from "../extra_icon/lapras.ico";
 import twitterIcon from "../extra_icon/twitter.ico";
 import vsmarketIcon from "../extra_icon/vsmarket.ico";
 import npmIcon from "../extra_icon/npm.png";
+import teratailIcon from "../extra_icon/teratail.png";
 import HLM from "react-hlm";
 
 const MyCardProp = (props: {
@@ -24,6 +25,7 @@ const MyCardProp = (props: {
   lapras?: string;
   vsmarket?: string;
   npm?: string;
+  teratail?: string;
 }) => {
   return (
     <Card>
@@ -115,6 +117,14 @@ const MyCardProp = (props: {
             </Icon.Group>
           </a>
         ) : null}
+        {props.teratail ? (
+          <a href={props.teratail} target="_blank">
+            <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
+              <Icon />
+              <Image src={teratailIcon} width={20} height={20} />
+            </Icon.Group>
+          </a>
+        ) : null}
       </Card.Content>
     </Card>
   );
@@ -135,6 +145,7 @@ const MyCard = () => {
         qiita
         twitter
         vsmarket
+        teratail
         avatar {
           children {
             ... on ImageSharp {
@@ -162,6 +173,7 @@ const MyCard = () => {
       lapras={data.authorJson.lapras}
       vsmarket={data.authorJson.vsmarket}
       npm={data.authorJson.npm}
+      teratail={data.authorJson.teratail}
     />;
 };
 
