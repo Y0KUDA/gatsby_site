@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { Card, Icon, Image } from "semantic-ui-react";
 import qiitaIcon from "../extra_icon/qiita.ico";
 import atcoderIcon from "../extra_icon/atcoder.png";
@@ -11,7 +11,7 @@ import vsmarketIcon from "../extra_icon/vsmarket.ico";
 import npmIcon from "../extra_icon/npm.png";
 import HLM from "react-hlm";
 
-export default (props: {
+const MyCardProp = (props: {
   id?: string;
   bio?: string;
   avatar?: string;
@@ -119,3 +119,50 @@ export default (props: {
     </Card>
   );
 };
+
+const MyCard = () => {
+  const data = useStaticQuery(graphql`
+    query MyCardQuery {
+      authorJson {
+        atcoder
+        bio
+        email
+        github
+        id
+        kaggle
+        lapras
+        npm
+        qiita
+        twitter
+        vsmarket
+        avatar {
+          children {
+            ... on ImageSharp {
+              fixed(width: 150, height: 150, quality: 100) {
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const avatar = data.authorJson.avatar.children[0];
+  return <MyCardProp
+      avatar={avatar.fixed.srcSet}
+      id={data.authorJson.id}
+      bio={data.authorJson.bio}
+      email={data.authorJson.email}
+      twitter={data.authorJson.twitter}
+      github={data.authorJson.github}
+      qiita={data.authorJson.qiita}
+      atcoder={data.authorJson.atcoder}
+      kaggle={data.authorJson.kaggle}
+      lapras={data.authorJson.lapras}
+      vsmarket={data.authorJson.vsmarket}
+      npm={data.authorJson.npm}
+    />;
+};
+
+export default MyCard;
