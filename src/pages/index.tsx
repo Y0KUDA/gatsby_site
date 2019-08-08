@@ -83,19 +83,7 @@ const BlogPage = (props: BlogProps) => {
             </Segment>
           </div>
           <div>
-            <MyCard avatar={avatar.fixed.srcSet}
-                    id={author.id}
-                    bio={author.bio}
-                    email={author.email}
-                    twitter={author.twitter}
-                    github={author.github}
-                    qiita={author.qiita}
-                    atcoder={author.atcoder}
-                    kaggle={author.kaggle}
-                    lapras={author.lapras}
-                    vsmarket={author.vsmarket}
-                    npm={author.npm}
-                    />
+            <MyCard/>
             <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
           </div>
         </Grid>
