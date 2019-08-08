@@ -40,7 +40,7 @@ import {
 } from "../graphql-types";
 import MyCard from "../components/MyCard";
 import { DiscussionEmbed } from "disqus-react";
-import { withLayout, withCardLayout, LayoutProps } from "../components/Layout";
+import { withLayout, LayoutProps } from "../components/Layout";
 import { graphql } from "gatsby";
 
 interface BlogPostProps extends LayoutProps {
@@ -294,7 +294,7 @@ const BlogPostPage = (props: BlogPostProps) => {
   );
 };
 
-export default withCardLayout(BlogPostPage);
+export default withLayout(BlogPostPage);
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {

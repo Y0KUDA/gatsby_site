@@ -78,24 +78,13 @@ export const withLayout = <P extends object>(WrappedComponent: React.ComponentTy
   class WithLayout extends React.Component<P & LayoutProps> {
     render() {
       return (
-        <Layout location={this.props.location}>
+        <Layout location={this.props.location}
+            slug={this.props.data.post ? this.props.data.post.fields.slug : null}
+            title={this.props.data.post ? this.props.data.post.frontmatter.title : null}
+            siteUrl={this.props.data.site ? this.props.data.site.siteMetadata.siteUrl : null}
+            description={this.props.data.post ? this.props.data.post.frontmatter.description : null} >
           <WrappedComponent {...this.props} />
         </Layout>
       );
     }
   };
-
-export const withCardLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) =>
-class WithLayout extends React.Component<P & LayoutProps> {
-  render() {
-    return (
-        <Layout location={this.props.location}
-            slug={this.props.data.post.fields.slug}
-            title={this.props.data.post.frontmatter.title}
-            siteUrl={this.props.data.site.siteMetadata.siteUrl}
-            description={this.props.data.post.frontmatter.description} >
-          <WrappedComponent {...this.props} />
-        </Layout>
-    );
-  }
-};
