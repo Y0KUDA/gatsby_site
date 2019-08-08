@@ -79,10 +79,11 @@ export const withLayout = <P extends object>(WrappedComponent: React.ComponentTy
     render() {
       return (
         <Layout location={this.props.location}
-            slug={this.props.data.post ? this.props.data.post.fields.slug : null}
-            title={this.props.data.post ? this.props.data.post.frontmatter.title : null}
-            siteUrl={this.props.data.site ? this.props.data.site.siteMetadata.siteUrl : null}
-            description={this.props.data.post ? this.props.data.post.frontmatter.description : null} >
+            slug={this.props.data ? this.props.data.post ? this.props.data.post.fields.slug : null : null}
+            title={this.props.data ? this.props.data.post ? this.props.data.post.frontmatter.title : null : null}
+            siteUrl={this.props.data ? this.props.data.site ? this.props.data.site.siteMetadata.siteUrl : null : null}
+            description={this.props.data ? this.props.data.post ?
+                                this.props.data.post.frontmatter.description : null : null} >
           <WrappedComponent {...this.props} />
         </Layout>
       );
