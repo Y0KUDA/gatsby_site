@@ -10,6 +10,7 @@ import twitterIcon from "../extra_icon/twitter.ico";
 import vsmarketIcon from "../extra_icon/vsmarket.ico";
 import npmIcon from "../extra_icon/npm.png";
 import teratailIcon from "../extra_icon/teratail.png";
+import instagramIcon from "../extra_icon/instagram.png";
 import HLM from "react-hlm";
 
 const MyCardProp = (props: {
@@ -26,6 +27,7 @@ const MyCardProp = (props: {
   vsmarket?: string;
   npm?: string;
   teratail?: string;
+  instagram?: string;
 }) => {
   return (
     <Card>
@@ -125,6 +127,14 @@ const MyCardProp = (props: {
             </Icon.Group>
           </a>
         ) : null}
+        {props.instagram ? (
+          <a href={props.instagram} target="_blank">
+            <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
+              <Icon />
+              <Image src={instagramIcon} width={20} height={20} />
+            </Icon.Group>
+          </a>
+        ) : null}
       </Card.Content>
     </Card>
   );
@@ -146,6 +156,7 @@ const MyCard = () => {
         twitter
         vsmarket
         teratail
+        instagram
         avatar {
           children {
             ... on ImageSharp {
@@ -174,6 +185,7 @@ const MyCard = () => {
       vsmarket={data.authorJson.vsmarket}
       npm={data.authorJson.npm}
       teratail={data.authorJson.teratail}
+      instagram={data.authorJson.instagram}
     />;
 };
 
