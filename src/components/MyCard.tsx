@@ -50,7 +50,7 @@ const MyCardProp = (props: {
             {props.email}
           </Card.Meta>
         ) : null}
-        {props.bio ? <Card.Description>{props.bio}</Card.Description> : null}
+        {props.bio ? <Card.Description dangerouslySetInnerHTML={{__html: props.bio}}></Card.Description> : null}
       </Card.Content>
       <Card.Content extra>
         {props.twitter ? (
