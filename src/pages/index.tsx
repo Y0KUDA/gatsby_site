@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import TagsCard from "../components/TagsCard/TagsCard";
+import TagsList from "../components/TagsList";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
@@ -30,6 +31,9 @@ const BlogPage = (props: BlogProps) => {
   // TODO export posts in a proper component
   const Posts = (
     <Container>
+      <div className="tablet only mobile only computer only">
+        <TagsList Link={Link} tags={tags} tag={props.pageContext.tag} />
+      </div>
       {posts.map(({ node }: {node: MarkdownRemark}) => {
         const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
         const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
