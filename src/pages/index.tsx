@@ -9,6 +9,7 @@ import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { MarkdownRemark } from "../graphql-types";
 import MyCard from "../components/MyCard";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 interface BlogProps extends LayoutProps {
   data: {
@@ -75,14 +76,21 @@ const BlogPage = (props: BlogProps) => {
 
       {/* Content */}
       <Segment vertical>
-        <Grid padded style={{ justifyContent: "space-around" }}>
-          <div style={{ maxWidth: 600 }}>
+        <Grid columns={3} padded style={{ justifyContent: "space-around" }}>
+          <div className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="Y0KUDA"
+              options={{height: 1200}}
+            />
+          </div>
+          <div style={{ maxWidth: 800 }}>
             {Posts}
             <Segment vertical textAlign="center">
               <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
             </Segment>
           </div>
-          <div>
+          <div className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
             <MyCard/>
             <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
           </div>
