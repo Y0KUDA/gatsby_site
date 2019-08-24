@@ -26,7 +26,7 @@ jobs:
           name: build
           command: |
             curl -o- -L https://yarnpkg.com/install.sh | bash  
-            yarn
+            yarn --ignore-engines
             sudo npm install -g gatsby
             gatsby clean
             yarn build
