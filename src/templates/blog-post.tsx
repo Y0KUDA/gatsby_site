@@ -110,15 +110,6 @@ const BlogPostPage = (props: BlogPostProps) => {
   return (
     <Container>
       <Segment vertical style={{ border: "none" }}>
-        <Item.Group>
-          <Item>
-            <Item.Content>
-              <Item.Extra>
-                {frontmatter.updatedDate} - {timeToRead} min read
-              </Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
       </Segment>
 
       <Grid columns={3} padded style={{ justifyContent: "space-around" }}>
@@ -131,6 +122,15 @@ const BlogPostPage = (props: BlogPostProps) => {
         </div>
         <Ref innerRef={contextRef}>
           <div style={{ maxWidth: 800, minWidth: 200 }}>
+          <Item.Group>
+            <Item>
+              <Item.Content>
+                <Item.Extra>
+                  {frontmatter.updatedDate} - {timeToRead} min read
+                </Item.Extra>
+              </Item.Content>
+            </Item>
+          </Item.Group>
             <Header
               as="h1"
               className="titleStyle"
