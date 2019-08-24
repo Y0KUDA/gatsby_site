@@ -42,6 +42,7 @@ import MyCard from "../components/MyCard";
 import { DiscussionEmbed } from "disqus-react";
 import { withLayout, LayoutProps } from "../components/Layout";
 import { graphql } from "gatsby";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 interface BlogPostProps extends LayoutProps {
   data: {
@@ -109,20 +110,27 @@ const BlogPostPage = (props: BlogPostProps) => {
   return (
     <Container>
       <Segment vertical style={{ border: "none" }}>
-        <Item.Group>
-          <Item>
-            <Item.Content>
-              <Item.Extra>
-                {frontmatter.updatedDate} - {timeToRead} min read
-              </Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
       </Segment>
 
-      <Grid padded style={{ justifyContent: "space-around" }}>
+      <Grid columns={3} padded style={{ justifyContent: "space-around" }}>
+        <div className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
+          <TwitterTimelineEmbed
+            sourceType="profile"
+            screenName="Y0KUDA"
+            options={{height: 1200}}
+          />
+        </div>
         <Ref innerRef={contextRef}>
           <div style={{ maxWidth: 800, minWidth: 200 }}>
+          <Item.Group>
+            <Item>
+              <Item.Content>
+                <Item.Extra>
+                  {frontmatter.updatedDate} - {timeToRead} min read
+                </Item.Extra>
+              </Item.Content>
+            </Item>
+          </Item.Group>
             <Header
               as="h1"
               className="titleStyle"
@@ -140,7 +148,8 @@ const BlogPostPage = (props: BlogPostProps) => {
             />
           </div>
         </Ref>
-        <Grid.Column className="tablet hidden mobile hidden" width={4}>
+        {/* Don't change Grid.Column to div. Sticky won't work. */}
+        <Grid.Column className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
           <MyCard/>
           <Sticky context={contextRef}>
             <Card>

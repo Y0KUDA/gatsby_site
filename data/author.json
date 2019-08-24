@@ -1,7 +1,7 @@
 [
   {
     "id": "ykd",
-    "bio": "へっぽこぷろぐらまぁ (笑)",
+    "bio": "へっぽこぷろぐらまぁ (笑)<br/>最近はFXにハマってます。",
     "avatar": "avatars/nyan.jpg",
     "email": "ykd.engineer@gmail.com",
     "twitter": "https://twitter.com/Y0KUDA",
@@ -12,6 +12,7 @@
     "lapras": "https://lapras.com/public/ASZLKRT",
     "vsmarket": "https://marketplace.visualstudio.com/publishers/Y0KUDA",
     "npm": "https://www.npmjs.com/~yokuda",
-    "teratail" : "https://teratail.com/users/yokuda"
+    "teratail" : "https://teratail.com/users/yokuda",
+    "instagram" : "https://www.instagram.com/ykd.engineer"
   }
 ]

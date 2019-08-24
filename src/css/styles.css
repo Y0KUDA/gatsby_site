@@ -27,6 +27,10 @@
   font-weight: normal;
 }
 
+.ui.container {
+  width: 1400px !important;
+}
+
 .ui.vertical.stripe {
   padding: 8em 0;
 }

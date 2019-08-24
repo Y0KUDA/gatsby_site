@@ -4,11 +4,13 @@ import { StaticQuery, graphql } from "gatsby";
 import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import TagsCard from "../components/TagsCard/TagsCard";
+import TagsList from "../components/TagsList";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 import {withLayout, LayoutProps} from "../components/Layout";
 import { MarkdownRemark } from "../graphql-types";
 import MyCard from "../components/MyCard";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 interface BlogProps extends LayoutProps {
   data: {
@@ -29,6 +31,9 @@ const BlogPage = (props: BlogProps) => {
   // TODO export posts in a proper component
   const Posts = (
     <Container>
+      <div className="tablet only mobile only computer only">
+        <TagsList Link={Link} tags={tags} tag={props.pageContext.tag} />
+      </div>
       {posts.map(({ node }: {node: MarkdownRemark}) => {
         const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
         const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
@@ -75,14 +80,21 @@ const BlogPage = (props: BlogProps) => {
 
       {/* Content */}
       <Segment vertical>
-        <Grid padded style={{ justifyContent: "space-around" }}>
-          <div style={{ maxWidth: 600 }}>
+        <Grid columns={3} padded style={{ justifyContent: "space-around" }}>
+          <div className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="Y0KUDA"
+              options={{height: 1200}}
+            />
+          </div>
+          <div style={{ maxWidth: 800 }}>
             {Posts}
             <Segment vertical textAlign="center">
               <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
             </Segment>
           </div>
-          <div>
+          <div className="tablet hidden mobile hidden" style={{ maxWidth: 300 }}>
             <MyCard/>
             <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
           </div>

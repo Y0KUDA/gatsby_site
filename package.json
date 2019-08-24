@@ -70,6 +70,7 @@
     "react-redux": "^7.0.3",
     "react-scripts": "^3.0.1",
     "react-share": "^3.0.0",
+    "react-twitter-embed": "^2.0.8",
     "redux-devtools-extension": "^2.13.8",
     "semantic-ui-react": "^0.87.3",
     "slash": "3.0.0",
