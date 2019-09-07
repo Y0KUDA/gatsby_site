@@ -1,7 +1,7 @@
 ---
 title: 【FX】ぼくのかんがえたさいきょうのトレーディングストラテジ【最強】
 createdDate: "2019-08-28"
-updatedDate: "2019-08-28"
+updatedDate: "2019-09-07"
 author: ykd
 tags:
   - 投資
