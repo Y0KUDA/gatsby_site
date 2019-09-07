@@ -34,6 +34,11 @@ import linuxLogo from "./img/linux.png";
 import reactLogo from "./img/react.png";
 import nodeLogo from "./img/nodejs.png";
 
+import azureLogo from "./img/azure.png";
+import databricksLogo from "./img/databricks.jpg";
+import postogresqlLogo from "./img/postogresql.png";
+import dwhouseLogo from "./img/sql_datawarehouse.png";
+
 const AboutPage = (props: any) => {
   const author = props.data.posts.edges[0].node.frontmatter.author;
   const avatar = author.avatar.children[0] as ImageSharp;
@@ -72,6 +77,10 @@ const AboutPage = (props: any) => {
                 <Image src={linuxLogo} />
                 <Image src={reactLogo} />
                 <Image src={nodeLogo} />
+                <Image src={azureLogo} />
+                <Image src={databricksLogo} />
+                <Image src={postogresqlLogo} />
+                <Image src={dwhouseLogo} />
               </Image.Group>
               <Header as="h3">Contact</Header>
                 <p>ご連絡、お仕事の依頼はこちらまで。</p>
