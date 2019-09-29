@@ -1,7 +1,7 @@
 ---
 title: FX日記
 createdDate: '2019-08-23'
-updatedDate: '2019-09-07'
+updatedDate: '2019-09-29'
 author: ykd
 tags:
   - 投資
