@@ -54,8 +54,10 @@ const AboutPage = (props: any) => {
         <Grid padded style={{ justifyContent: "space-around" }}>
           <div style={{ maxWidth: 600 }}>
             <Segment vertical>
-              <p>何でも屋さんです。</p>
-              <p>直近は某社でC++とC#でパッケージソフトウェアを作ってました。</p>
+              <p>IT系何でも屋さんを目指しています。</p>
+              <p>今は東京のデータ系ITベンチャー企業で働いています。</p>
+              <p>前職は某社でCADソフトウェアを作ってました。</p>
+              <p>あと、投資もします。年収1000万を目指しています。</p>
               <Image.Group size="tiny">
                 <Image src={cppLogo} />
                 <Image src={csLogo} />
@@ -94,7 +96,7 @@ const AboutPage = (props: any) => {
               >
                 gatsby-starter
               </a>
-              をフォークして作成されています。
+              をフォークして作成しました。
             </Segment>
           </div>
           <div>
