@@ -139,6 +139,18 @@ const BlogPostPage = (props: BlogPostProps) => {
             </Header>
             <Segment vertical>{tags}</Segment>
             <Image {...cover} fluid />
+            <br/>
+            <Container className="tablet only mobile only computer only">
+              <Header as="h2" className="titleStyle">Index</Header>
+              <div
+                  className="tocStyle"
+                  style={{ fontSize: "1.3rem" }}
+                  dangerouslySetInnerHTML={{
+                    __html: tableOfContents,
+                  }}
+                />
+                <br/>
+            </Container>
             <Segment
               vertical
               className="ui celled padded table mdstyle"
