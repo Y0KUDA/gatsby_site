@@ -48,22 +48,13 @@ jobs:
       - run:
           name: upload to server
           command: |
-            ls -al
-            apt-get update
-            apt-get -qq install git-ftp
-            git config git-ftp.url unearned-in.com
-            git config git-ftp.user ${FTP_USERNAME}
-            git config git-ftp.password ${FTP_PASSWORD}
             git config --global user.email "dummy@dummy.com"
             git config --global user.name "dummy"
-            cp .htaccess public/
             git add public -f
             git commit -nm "temp"
-            git subtree push --prefix public/ . build
-            git checkout build
-            git ftp push -f
-
-
+            git subtree push --prefix public/ . gh-pages
+            git checkout gh-pages
+            git push -f https://${GHUSR}:${GHPWD}@github.com/Y0KUDA/Y0KUDA.github.io.git gh-pages:master
 workflows:
   all:
     jobs:
