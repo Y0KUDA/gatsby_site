@@ -57,6 +57,7 @@ jobs:
             # copy built file
             cd ..
             cp -rf project/public/* Y0KUDA.github.io/ 
+            echo unearned-in.com > Y0KUDA.github.io/CNAME
             # commit all
             cd Y0KUDA.github.io 
             git config --global user.email "dummy@dummy.com"
