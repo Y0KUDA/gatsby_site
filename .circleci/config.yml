@@ -48,13 +48,22 @@ jobs:
       - run:
           name: upload to server
           command: |
+            cd ..
+            # clone blog repository
+            git clone https://github.com/Y0KUDA/Y0KUDA.github.io.git
+            # remove old files
+            cd Y0KUDA.github.io 
+            echo * |xargs rm -rf 
+            # copy built file
+            cd ..
+            cp -rf project/public/* Y0KUDA.github.io/ 
+            # commit all
+            cd Y0KUDA.github.io 
             git config --global user.email "dummy@dummy.com"
-            git config --global user.name "dummy"
-            git add public -f
-            git commit -nm "temp"
-            git subtree push --prefix public/ . gh-pages
-            git checkout gh-pages
-            git push -f https://${GHUSR}:${GHPWD}@github.com/Y0KUDA/Y0KUDA.github.io.git gh-pages:master
+            git config --global user.name "dummy"            
+            git add --all 
+            git commit -m "update"
+            git push https://${GHUSR}:${GHPWD}@github.com/Y0KUDA/Y0KUDA.github.io.git master:master
 workflows:
   all:
     jobs:
