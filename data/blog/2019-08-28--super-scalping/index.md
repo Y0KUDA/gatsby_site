@@ -6,7 +6,7 @@ author: ykd
 tags:
   - 投資
   - FX
-image: ../img/default.png
+image: ../img/trading.jpg
 draft: false
 description: 2時間だけスキャルピングの鬼になってみた。成績公開します。
 ---

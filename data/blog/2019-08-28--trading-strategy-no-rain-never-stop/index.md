@@ -1,12 +1,12 @@
 ---
 title: 【FX】ぼくのかんがえたさいきょうのトレーディングストラテジ【最強】
-createdDate: "2019-08-28"
-updatedDate: "2019-09-07"
+createdDate: '2019-08-28'
+updatedDate: '2019-10-21'
 author: ykd
 tags:
   - 投資
   - FX
-image: ../img/it.jpg
+image: ../img/trading.jpg
 draft: false
 description: 価値が上がるまでホールドし続ければ必勝、そう思っていた時期が俺にもありました。
 ---
