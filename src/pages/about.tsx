@@ -99,6 +99,10 @@ const Logos = [
     link : "https://ja.wikipedia.org/wiki/Microsoft_Azure",
     popup : "Microsoft Azure",
   }, {
+    img : require("./img/servicebus.png"),
+    link : "https://azure.microsoft.com/ja-jp/services/service-bus/",
+    popup : "Azure Service Bus",
+  }, {
     img : require("./img/databricks.jpg"),
     link : "https://en.wikipedia.org/wiki/Databricks",
     popup : "Databricks",
@@ -110,6 +114,14 @@ const Logos = [
     img : require("./img/sql_datawarehouse.png"),
     link : "https://docs.microsoft.com/ja-jp/azure/sql-data-warehouse/",
     popup : "Azure SQL Data Warehouse",
+  }, {
+    img : require("./img/kafka.png"),
+    link : "https://en.wikipedia.org/wiki/Apache_Kafka",
+    popup : "Apache Kafka",
+  }, {
+    img : require("./img/spark.png"),
+    link : "https://ja.wikipedia.org/wiki/Apache_Spark",
+    popup : "Apache Spark",
   },
 ];
 
