@@ -12,32 +12,105 @@ import {
 import { withLayout } from "../components/Layout";
 import MyCard from "../components/MyCard";
 
-import cppLogo from "./img/cpp.png";
-import csLogo from "./img/csharp.png";
-import luaLogo from "./img/lua.png";
-import poshLogo from "./img/powershell.png";
-import pythonLogo from "./img/python.png";
-import rLogo from "./img/r.png";
-import rubyLogo from "./img/ruby.png";
-import tsLogo from "./img/ts.png";
-import juliaLogo from "./img/julia.png";
-import javaLogo from "./img/java.png";
-
-import circleciLogo from "./img/circleci.png";
-import dockerLogo from "./img/docker.png";
-import droneciLogo from "./img/drone.png";
-import gitLogo from "./img/git.png";
-import githubLogo from "./img/github.png";
-import jenkinsLogo from "./img/jenkins.png";
-import jupyterLogo from "./img/jupyter.png";
-import linuxLogo from "./img/linux.png";
-import reactLogo from "./img/react.png";
-import nodeLogo from "./img/nodejs.png";
-
-import azureLogo from "./img/azure.png";
-import databricksLogo from "./img/databricks.jpg";
-import postogresqlLogo from "./img/postogresql.png";
-import dwhouseLogo from "./img/sql_datawarehouse.png";
+const Logos = [
+  {
+    caption : "C++",
+    img : require("./img/cpp.png"),
+    link : "https://ja.wikipedia.org/wiki/C%2B%2B",
+  }, {
+    caption : "C#",
+    img : require("./img/csharp.png"),
+    link : "https://ja.wikipedia.org/wiki/C_Sharp",
+  }, {
+    caption : "",
+    img : require("./img/lua.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/powershell.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/python.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/r.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/ruby.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/ts.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/julia.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/java.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/circleci.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/docker.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/drone.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/git.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/github.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/jenkins.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/jupyter.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/linux.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/react.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/nodejs.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/azure.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/databricks.jpg"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/postogresql.png"),
+    link : "",
+  }, {
+    caption : "",
+    img : require("./img/sql_datawarehouse.png"),
+    link : "",
+  },
+];
 
 const AboutPage = (props: any) => {
   const author = props.data.posts.edges[0].node.frontmatter.author;
@@ -59,30 +132,9 @@ const AboutPage = (props: any) => {
               <p>前職は某社でCADソフトウェアを作ってました。</p>
               <p>あと、投資もします。年収1000万を目指しています。</p>
               <Image.Group size="tiny">
-                <Image src={cppLogo} />
-                <Image src={csLogo} />
-                <Image src={luaLogo} />
-                <Image src={poshLogo} />
-                <Image src={pythonLogo} />
-                <Image src={rLogo} />
-                <Image src={rubyLogo} />
-                <Image src={tsLogo} />
-                <Image src={juliaLogo} />
-                <Image src={javaLogo} />
-                <Image src={circleciLogo} />
-                <Image src={dockerLogo} />
-                <Image src={droneciLogo} />
-                <Image src={gitLogo} />
-                <Image src={githubLogo} />
-                <Image src={jenkinsLogo} />
-                <Image src={jupyterLogo} />
-                <Image src={linuxLogo} />
-                <Image src={reactLogo} />
-                <Image src={nodeLogo} />
-                <Image src={azureLogo} />
-                <Image src={databricksLogo} />
-                <Image src={postogresqlLogo} />
-                <Image src={dwhouseLogo} />
+                {Logos.map((logo) =>
+                  <Image src={logo.img} />,
+                )}
               </Image.Group>
               <Header as="h3">Contact</Header>
                 <p>ご連絡、お仕事の依頼はこちらまで。</p>
