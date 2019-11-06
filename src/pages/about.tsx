@@ -8,107 +8,108 @@ import {
   Icon,
   Grid,
   Image,
+  Popup,
 } from "semantic-ui-react";
 import { withLayout } from "../components/Layout";
 import MyCard from "../components/MyCard";
 
 const Logos = [
   {
-    caption : "C++",
     img : require("./img/cpp.png"),
     link : "https://ja.wikipedia.org/wiki/C%2B%2B",
+    popup : "C++",
   }, {
-    caption : "C#",
     img : require("./img/csharp.png"),
     link : "https://ja.wikipedia.org/wiki/C_Sharp",
+    popup : "C#",
   }, {
-    caption : "",
     img : require("./img/lua.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Lua",
+    popup : "Lua",
   }, {
-    caption : "",
     img : require("./img/powershell.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/PowerShell",
+    popup : "Powershell",
   }, {
-    caption : "",
     img : require("./img/python.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Python",
+    popup : "Python",
   }, {
-    caption : "",
     img : require("./img/r.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/R%E8%A8%80%E8%AA%9E",
+    popup : "R",
   }, {
-    caption : "",
     img : require("./img/ruby.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Ruby",
+    popup : "Ruby",
   }, {
-    caption : "",
     img : require("./img/ts.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/TypeScript",
+    popup : "TypeScript",
   }, {
-    caption : "",
     img : require("./img/julia.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Julia_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)",
+    popup : "Julia",
   }, {
-    caption : "",
     img : require("./img/java.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Java",
+    popup : "Java",
   }, {
-    caption : "",
     img : require("./img/circleci.png"),
-    link : "",
+    link : "https://circleci.com/",
+    popup : "CircleCI",
   }, {
-    caption : "",
     img : require("./img/docker.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Docker",
+    popup : "Docker",
   }, {
-    caption : "",
     img : require("./img/drone.png"),
-    link : "",
+    link : "https://drone.io/",
+    popup : "Drone CI",
   }, {
-    caption : "",
     img : require("./img/git.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Git",
+    popup : "Git",
   }, {
-    caption : "",
     img : require("./img/github.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/GitHub",
+    popup : "GitHub",
   }, {
-    caption : "",
     img : require("./img/jenkins.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Jenkins",
+    popup : "Jenkins",
   }, {
-    caption : "",
     img : require("./img/jupyter.png"),
-    link : "",
+    link : "https://en.wikipedia.org/wiki/Project_Jupyter",
+    popup : "Jupyter Notebook",
   }, {
-    caption : "",
     img : require("./img/linux.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Linux",
+    popup : "Linux",
   }, {
-    caption : "",
     img : require("./img/react.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/React",
+    popup : "React",
   }, {
-    caption : "",
     img : require("./img/nodejs.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Node.js",
+    popup : "Node.js",
   }, {
-    caption : "",
     img : require("./img/azure.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/Microsoft_Azure",
+    popup : "Microsoft Azure",
   }, {
-    caption : "",
     img : require("./img/databricks.jpg"),
-    link : "",
+    link : "https://en.wikipedia.org/wiki/Databricks",
+    popup : "Databricks",
   }, {
-    caption : "",
     img : require("./img/postogresql.png"),
-    link : "",
+    link : "https://ja.wikipedia.org/wiki/PostgreSQL",
+    popup : "PostgreSQL",
   }, {
-    caption : "",
     img : require("./img/sql_datawarehouse.png"),
-    link : "",
+    link : "https://docs.microsoft.com/ja-jp/azure/sql-data-warehouse/",
+    popup : "Azure SQL Data Warehouse",
   },
 ];
 
@@ -133,7 +134,8 @@ const AboutPage = (props: any) => {
               <p>あと、投資もします。年収1000万を目指しています。</p>
               <Image.Group size="tiny">
                 {Logos.map((logo) =>
-                  <Image src={logo.img} />,
+                  <Popup content={logo.popup}
+                    trigger={<Image src={logo.img} href={logo.link} target="_blank"/>}/>,
                 )}
               </Image.Group>
               <Header as="h3">Contact</Header>
