@@ -34,6 +34,7 @@ const Layout = (props: LayoutProps) => {
   const isHome = false;
   return (
     <Provider store={store}>
+      {props.title ? null : <Helmet title="虚業家プログラマのブログ"/>}
       {props.title ? props.siteUrl ? props.slug ?
         <Helmet title={props.title}>
           <meta name="twitter:card" content="summary_large_image" />
