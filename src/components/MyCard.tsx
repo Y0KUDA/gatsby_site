@@ -11,6 +11,7 @@ import vsmarketIcon from "../extra_icon/vsmarket.ico";
 import npmIcon from "../extra_icon/npm.png";
 import teratailIcon from "../extra_icon/teratail.png";
 import instagramIcon from "../extra_icon/instagram.png";
+import hackerrankIcon from "../extra_icon/hackerrank.png";
 import HLM from "react-hlm";
 
 const MyCardProp = (props: {
@@ -28,6 +29,7 @@ const MyCardProp = (props: {
   npm?: string;
   teratail?: string;
   instagram?: string;
+  hackerrank?: string;
 }) => {
   return (
     <Card>
@@ -76,6 +78,14 @@ const MyCardProp = (props: {
             <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
               <Icon />
               <Image src={qiitaIcon} width={20} height={20} />
+            </Icon.Group>
+          </a>
+        ) : null}
+        {props.hackerrank ? (
+          <a href={props.hackerrank} target="_blank">
+            <Icon.Group style={{ margin: "0.2rem 0.2rem 0.2rem 0.2rem" }}>
+              <Icon />
+              <Image src={hackerrankIcon} width={20} height={20} />
             </Icon.Group>
           </a>
         ) : null}
@@ -153,6 +163,7 @@ const MyCard = () => {
         lapras
         npm
         qiita
+        hackerrank
         twitter
         vsmarket
         teratail
@@ -186,6 +197,7 @@ const MyCard = () => {
       npm={data.authorJson.npm}
       teratail={data.authorJson.teratail}
       instagram={data.authorJson.instagram}
+      hackerrank={data.authorJson.hackerrank}
     />;
 };
 
