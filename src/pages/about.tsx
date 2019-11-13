@@ -55,6 +55,10 @@ const Logos = [
     link : "https://ja.wikipedia.org/wiki/Java",
     popup : "Java",
   }, {
+    img : require("./img/php.png"),
+    link : "https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)",
+    popup : "PHP",
+  }, {
     img : require("./img/circleci.png"),
     link : "https://circleci.com/",
     popup : "CircleCI",
@@ -99,9 +103,17 @@ const Logos = [
     link : "https://ja.wikipedia.org/wiki/Microsoft_Azure",
     popup : "Microsoft Azure",
   }, {
+    img : require("./img/cosmosdb.jpg"),
+    link : "https://azure.microsoft.com/ja-jp/services/cosmos-db/",
+    popup : "Azure Cosmos DB",
+  }, {
     img : require("./img/servicebus.png"),
     link : "https://azure.microsoft.com/ja-jp/services/service-bus/",
     popup : "Azure Service Bus",
+  }, {
+    img : require("./img/datafactory.png"),
+    link : "https://azure.microsoft.com/ja-jp/services/data-factory/",
+    popup : "Azure Data Factory",
   }, {
     img : require("./img/databricks.jpg"),
     link : "https://en.wikipedia.org/wiki/Databricks",
