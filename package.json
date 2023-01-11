@@ -59,7 +59,7 @@
     "gatsby-remark-social-cards": "https://github.com/Y0KUDA/gatsby-remark-social-cards-jp.git",
     "gatsby-source-filesystem": "^2.1.31",
     "gatsby-transformer-json": "^2.2.13",
-    "gatsby-transformer-remark": "^2.6.28",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "2.2.21",
     "gray-matter": "^4.0.2",
     "lodash": "^4.17.15",
